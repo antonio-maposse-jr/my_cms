@@ -1,0 +1,50 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.2.1",
+        "alpinejs": "^2.7.3",
+        "autoprefixer": "^10.1.0",
+        "axios": "^0.25",
+        "handlebars": "^4.7.7",
+        "izitoast": "^1.4.0",
+        "jsrender": "^1.0.5",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.2.1",
+        "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.36.0",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^2.0.2"
+    },
+    "dependencies": {
+        "@hotwired/turbo": "^7.1.0",
+        "@simonwep/pickr": "^1.8.2",
+        "@yaireo/tagify": "^4.12.0",
+        "amplitudejs": "^5.3.2",
+        "basscss": "^8.0.2",
+        "bootstrap-colorpicker": "^3.4.0",
+        "chart.js": "^3.7.1",
+        "datatables": "^1.10.18",
+        "daterangepicker": "^3.1.0",
+        "emojionearea": "^3.4.2",
+        "flatpickr": "^4.6.13",
+        "lightbox2": "^2.11.3",
+        "masonry-layout": "^4.2.2",
+        "mdbootstrap": "^4.20.0",
+        "mixitup": "^3.3.1",
+        "moment": "^2.29.1",
+        "sortablejs": "^1.15.0",
+        "sweetalert": "^2.1.2",
+        "vanilla-lazyload": "^17.8.3"
+    }
+}

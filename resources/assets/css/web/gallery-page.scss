@@ -1,0 +1,53 @@
+.grid-item {
+    width: 400px !important;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.galleryImages {
+    margin: 1rem 0;
+    column-gap: 8px;
+    column-width: 33.33333333333333%;
+}
+
+.column-count{
+    column-count: 3;
+}
+
+.tile {
+    display: none;
+}
+
+.scale-anm {
+    //margin: 0 0 1.125rem;
+    width: 100%;
+}
+
+.tile img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+.navCategory:hover, .navCategory:focus, .navCategory:active, .navCategory:visited, .active {
+    border-bottom: 2px solid #2962ff;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.main {
+    min-height: calc(90vh - 100px) !important;
+    height: auto;
+    overflow:hidden;
+}
+
+.gallery-background {
+    background-color: unset;
+}

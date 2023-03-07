@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /admin/*
+Disallow: /login
+Disallow: /uploads/*
+Disallow: /support
+
+Sitemap: {{URL}}/sitemap.xml

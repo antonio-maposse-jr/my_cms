@@ -1,0 +1,67 @@
+@import "../scss/variables.scss";
+
+.main {
+    min-height: calc(90vh - 100px) !important;
+    height: auto;
+    overflow: hidden;
+
+    .gallery-details-section {
+        .gallery-details-post {
+            width: 100%;
+            height: 280px;
+            box-shadow: $box-shadow;
+
+            @media (max-width: 991px) {
+                height: 300px;
+            }
+        }
+
+        .grid-item {
+            width: 400px !important;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        .gallery-images {
+            margin: 1rem 0;
+            column-gap: 8px;
+            column-width: 33.33333333333333%;
+            
+            .tile {
+                display: none;
+
+                & img {
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .scale-anm {
+                //margin: 0 0 1.125rem;
+                width: 100%;
+                padding:5px;
+            }
+        }
+
+        .column-count {
+            column-count: 3;
+        }
+
+        .nav-category {
+            &:hover, &:focus, &.active, &:visited {
+                border-bottom: 2px solid $green;
+            }
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}

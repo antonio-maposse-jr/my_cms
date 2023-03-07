@@ -1,0 +1,16 @@
+@import "../scss/variables.scss";
+
+.terms-section {
+    .section-heading h2:after {
+        left: 340px;
+        @media (max-width: 767px) {
+            left: 268px;
+        }
+        @media (max-width: 480px) {
+            left: 245px;
+        }
+        @media (max-width: 375px) {
+            width: 45px;
+        }
+    }
+}

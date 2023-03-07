@@ -1,0 +1,81 @@
+.dark-mode {
+    background-color: #000;
+    color: #fff
+}
+
+.dark-mode .text-black, .dark-mode .form-control {
+    color: #fff !important
+}
+
+.dark-mode .bg-light, .dark-mode .offcanvas, .dark-mode .top-bar-section .navbar .navbar-collapse, .dark-mode .top-bar-section .language-dropdown .submenu, .dark-mode .top-bar-section .navbar .dropdown .dropdown-nav .dropdown-sub-nav:hover .dropdown-sub-list, .dark-mode header .header-icon .dropdown-menu {
+    background-color: #141a1f !important
+}
+
+.dark-mode .breaking-news-section {
+    background-color: #141a1f !important
+}
+
+@media (max-width: 991px) {
+    .dark-mode .breaking-news-section {
+        background-color: #000 !important
+    }
+}
+
+@media (max-width: 991px) {
+    .dark-mode .top-bar {
+        background-color: #141a1f !important
+    }
+}
+
+.dark-mode .bg-black {
+    background-color: #232d36 !important
+}
+
+.dark-mode .br-gray {
+    border-right: 1px solid #232d36
+}
+
+.dark-mode .br-gray-100, .dark-mode .sports-left-section .pagination .page-item .page-link {
+    border: 1px solid #232d36
+}
+
+.dark-mode .card {
+    background-color: transparent
+}
+
+.dark-mode .latest-news-section .section-heading .btn, .dark-mode .form-check-input, .dark-mode .voting-poll-section .voting-poll .progress, .dark-mode .hot-categories-section .hot-categories-post .post .numbers, .dark-mode .sports-left-section .pagination .page-item .page-link, .dark-mode form .form-control, .dark-mode .top-bar-section .navbar .dropdown:hover .dropdown-nav {
+    background-color: #000 !important
+}
+
+.dark-mode .voting-poll-section .voting-poll .form-check, .dark-mode .form-check-input, .dark-mode .voting-poll-section .voting-poll .progress {
+    border: 1px solid #232d36
+}
+
+.dark-mode .form-check-input:checked, .dark-mode .sports-left-section .pagination .page-item .active, .dark-mode .sports-left-section .pagination .page-item .page-link:hover {
+    background-color: #f57b20 !important;
+    border: 1px solid #f57b20 !important
+}
+
+.dark-mode .section-heading, .dark-mode .trending-post .card, .dark-mode .popular-news-post .card, .dark-mode .offcanvas .offcanvas-content .contact-desc {
+    border-bottom: 1px solid #232d36
+}
+
+.dark-mode .carousel-control-prev .icon, .dark-mode .carousel-control-next .icon {
+    border: 1px solid #000
+}
+
+.dark-mode .fa-arrow-left:before, .dark-mode .fa-arrow-right:before, .dark-mode .theme-status {
+    color: #000
+}
+
+.dark-mode header .navbar .dropdown:hover .dropdown-nav, .dark-mode .offcanvas-backdrop, .dark-mode header .nav .dropdown .dropdown-nav, .dark-mode header .nav .dropdown .dropdown-nav .dropdown-sub-nav:hover .dropdown-sub-list {
+    background-color: #0a0d0f
+}
+
+.dark-mode .navbar-light .navbar-toggler-icon {
+    color: #8a8f95
+}
+
+.dark-mode .top-bar-section .navbar .navbar-collapse, .dark-mode header .header-icon .dropdown-menu {
+    box-shadow: 0px 0px 20px rgba(20, 20, 20, .464)
+}
