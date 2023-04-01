@@ -101,13 +101,13 @@ class AdSpaces extends Model implements HasMedia
             return $media->getFullUrl();
         }
         if ($this->ad_spaces == AdSpaces::HEADER) {
-            return asset('images/1300.png');
+            return asset('images/banner.gif');
         }
         if ($this->ad_view == AdSpaces::DESKTOP) {
-            return asset('images/800.png');
+            return asset('images/banner.gif');
         }
         if ($this->ad_view == AdSpaces::MOBILE) {
-            return asset('images/350_290.png');
+            return asset('images/banner.gif');
         }
     }
 }

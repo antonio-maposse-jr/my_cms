@@ -34,7 +34,7 @@
 {{--    @yield('pageCss')--}}
     @livewireStyles
     {!! reCaptcha()->renderJs() !!}
-    
+
 {{--    @livewireScripts--}}
     <script src="{{ asset('vendor/livewire/livewire.js') }}"></script>
     @include('livewire.livewire-turbo')
@@ -49,6 +49,7 @@
     </script>
     <script src="{{ mix('assets/js/front-third-party.js') }}"></script>
     <script src="{{ mix('assets/js/front-pages.js') }}"></script>
+    @yield('extra_script')
     @routes
 </head>
 <body class="dark-mode">

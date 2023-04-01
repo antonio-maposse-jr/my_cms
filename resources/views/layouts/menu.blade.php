@@ -62,6 +62,19 @@
         </a>
     </li>
 @endcanany
+
+@canany(['manage_all_post'])
+<li class="nav-item {{ Request::is('admin/premium-documents*') ? 'active' : '' }}">
+    <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('premium-documents.index') }}">
+    <span class="aside-menu-icon pe-3">
+       <i class="fa-solid fa-file fs-4"></i>
+    </span>
+        <span class="aside-menu-title">{!! __('Documents') !!}</span>
+    </a>
+</li>
+
+@endcanany
+
 @can('manage_emoji')
     <li class="nav-item {{ Request::is('admin/emoji*') ? 'active' : '' }}">
         <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('emoji.index') }}">

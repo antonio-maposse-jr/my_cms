@@ -3,7 +3,7 @@
 </x-livewire-tables::bs5.table.cell>
 
 <x-livewire-tables::bs5.table.cell>
-    {{ currencyFormat($row->price, $row->currency->currency_code) }}
+    {{ $row->price}} {{$row->currency->currency_code }}
 </x-livewire-tables::bs5.table.cell>
 
 <x-livewire-tables::bs5.table.cell>

@@ -217,6 +217,7 @@ mix.js([
     'resources/assets/js/ad_banner/ad_banner.js',
     'resources/assets/js/bulk_post/bulk-post.js',
     'resources/assets/js/plan/plans.js',
+    'resources/assets/js/premium_doc/premiumDoc.js',
     'resources/assets/js/subscription/upgrade.js',
     'resources/assets/js/emoji/emoji.js',
 ],'public/assets/js/pages.js').version();

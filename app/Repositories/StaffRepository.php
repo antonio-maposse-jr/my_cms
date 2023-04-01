@@ -74,12 +74,13 @@ class StaffRepository extends BaseRepository
             $input['status'] = ! empty($input['status']) ? Staff::ACTIVE : Staff::DEACTIVE;
             $input['type'] = User::STAFF;
             $staff = User::create($input);
+            $plan_id = $input['plan'];
 
             if (isset($input['role']) && ! empty($input['role'])) {
                 $staff->assignRole($input['role']);
             }
             if($staff->hasRole('customer')){
-                $plan = Plan::whereIsDefault(true)->first();
+                $plan = Plan::find($plan_id);
                 Subscription::create([
                     'plan_id'        => $plan->id,
                     'plan_amount'    => $plan->price,

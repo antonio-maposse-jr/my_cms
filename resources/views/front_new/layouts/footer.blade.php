@@ -71,14 +71,17 @@
                         class="col-xxl-3 col-lg-4 col-sm-6 text-lg-center text-sm-end text-center my-sm-0 my-3  order-1 order-lg-1">
                     <div class="social-icon d-flex justify-content-lg-center justify-content-sm-start justify-content-center">
                         <a href="{{$settings['facebook_url']}}" target="_blank"> <i class="fa-brands fa-facebook-f text-gray fs-18 me-xl-5 me-4"></i> </a>
-                        <a href="{{$settings['twitter_url']}}" target="_blank"> <i class="fa-brands fa-twitter text-gray fs-18 me-xl-5 me-4"></i> </a>
+                        <a href="{{$settings['instagram_url']}}" target="_blank"> <i class="fa-brands fa-instagram  text-gray fs-18  me-xl-5 me-4"></i></a>
                         <a href="{{$settings['linkedin_url']}}" target="_blank"> <i class="fa-brands fa-linkedin-in  text-gray fs-18 me-xl-5 me-4"></i></a>
+{{--
+                        <a href="{{$settings['twitter_url']}}" target="_blank"> <i class="fa-brands fa-twitter text-gray fs-18 me-xl-5 me-4"></i> </a>
                         <a href="{{$settings['pinterest_url']}}" target="_blank"> <i class="fa-brands fa-pinterest text-gray fs-18 me-xl-5 me-4"></i></a>
                         <a href="{{$settings['instagram_url']}}" target="_blank"> <i class="fa-brands fa-instagram  text-gray fs-18  me-xl-5 me-4"></i></a>
                         <a href="{{$settings['vk_url']}}" target="_blank"> <i class="fa-brands fa-vk text-gray fs-18  me-xl-5 me-4"></i></a>
                         <a href="{{$settings['telegram_url']}}" target="_blank"> <i class="fa-brands fa-telegram  text-gray fs-18  me-xl-5 me-4"></i></a>
                         <a href="{{$settings['youtube_url']}}" target="_blank"> <i class="fa-brands fa-youtube  text-gray fs-18 "></i></a>
-                    </div>
+                   --}}
+                </div>
                 </div>
                 <div class="col-xxl-3 col-lg-4 col-sm-12 text-lg-end mb-lg-0 mb-sm-4 text-center order-0 order-lg-2">
                     <div class="desc  justify-content-center ">

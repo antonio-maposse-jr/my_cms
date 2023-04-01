@@ -15,7 +15,7 @@
                 <div class="my-5">
                     <div class="font-weight-bolder">{{__('messages.allowed_file_size')}} 800 X 130</div>
                 <input type="hidden" value="{{App\Models\AdSpaces::DESKTOP}}" name="ad_view[]">
-                <input type="file" class="form-control" id="adBannerImageDesktop" accept=".png, .jpg, .jpeg,.webp,.svg"
+                <input type="file" class="form-control" id="adBannerImageDesktop" accept=".png, .jpg, .jpeg,.webp,.svg, .gif"
                        name="ad_banner[]" value="{{!empty($adBanner)?$adBanner[0]->ad_banner:''}}">
                 </div>
             </div>
@@ -30,7 +30,7 @@
             </div>
         </div>
         </div>
-       
+
         <div class="col-lg-6 col-md-12">
             {{ Form::label('name',__('messages.ad_space.ad_code').':',   ['class'=>'form-label required fs-6']) }}
               <textarea rows="10" cols="100" name="ad-code[]" >{{!empty($adBanner[0]->code) ? $adBanner[0]->code:''}}</textarea>
@@ -79,7 +79,7 @@
                         <div class="my-5">
                             <div class="font-weight-bolder">{{__('messages.allowed_file_size')}} 350 X 290</div>
                             <input type="hidden" value="{{App\Models\AdSpaces::MOBILE}}" name="ad_view[]">
-                            <input type="file" class="form-control" id="adBannerImageMobile" accept=".png, .jpg, .jpeg,.webp,.svg"
+                            <input type="file" class="form-control" id="adBannerImageMobile" accept=".png, .jpg, .jpeg,.webp,.svg, .gif"
                                    name="ad_banner[]" value="{{!empty($adBanner)?$adBanner[0]->ad_banner:''}}">
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                 {{ Form::label('name',__('messages.ad_space.ad_code').':',   ['class'=>'form-label required fs-6']) }}
                 <textarea rows="10" cols="100" name="ad-code[]" >{{!empty($adBanner[0]->code) ? $adBanner[0]->code:''}}</textarea>
             </div>
-        
+
         </div>
     @endif
 

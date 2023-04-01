@@ -48,9 +48,9 @@
                         <div class="social-icon d-flex justify-content-around ">
                             <a href="{{$settings['facebook_url']}}" target="_blank"> <i
                                         class="fa-brands fa-facebook text-secondary fs-18"></i></a>
-                            <a href="{{$settings['twitter_url']}}" target="_blank"> <i class="fa-brands fa-twitter text-secondary fs-18"></i></a>
+                            {{-- <a href="{{$settings['twitter_url']}}" target="_blank"> <i class="fa-brands fa-twitter text-secondary fs-18"></i></a> --}}
                             <a href="{{$settings['linkedin_url']}}" target="_blank"> <i class="fa-brands fa-linkedin-in text-secondary fs-18"></i></a>
-                            <a href="{{$settings['pinterest_url']}}" target="_blank"> <i class="fa-brands fa-pinterest text-secondary fs-18"></i></a>
+                            {{-- <a href="{{$settings['pinterest_url']}}" target="_blank"> <i class="fa-brands fa-pinterest text-secondary fs-18"></i></a> --}}
                             <a href="{{$settings['instagram_url']}}" target="_blank"> <i class="fa-brands fa-instagram text-secondary fs-18"></i></a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                                     <ul class="nav submenu language-menu">
                                         @foreach(getFrontLanguage() as $key => $language)
                                         <li class="nav-item languageSelection" data-prefix-value="ar">
-                                            <a href="javascript:void(0)" class="nav-link fs-14 d-flex align-items-center selectLanguage 
+                                            <a href="javascript:void(0)" class="nav-link fs-14 d-flex align-items-center selectLanguage
                                                @if(getFrontSelectLanguageName() == $language) active @endif"  data-id="{{ $key }}">
                                                 {{ $language }}
                                             </a>
@@ -199,11 +199,14 @@
                                         @endif
                                     @endforeach
 
-                                    <div class="set">
-                                        <a href="{{ route('galleryPage') }}" class="fs-14 fw-6 {{ ((Request::is('g')) || (Request::is('g/*'))) ? 'active' : '' }}">
+                                    {{-- <li class="">
+                                        <a class="fs-14 fw-6 d-flex justify-content-between {{ 'Semanário' == ucfirst(last(request()->segments())) ? 'active': '' }}" href="{{route('front.semanarioPdf')}}">{{ __('Semanário') }}</a>
+                                    </li> --}}
+                                    {{-- <div class="set">
+                                        <a href="{{route('front.semanarioPdf')}}" class="fs-14 fw-6 {{ ((Request::is('semario-pdf')) || (Request::is('semario-pdf'))) ? 'active' : '' }}">
                                             {{ __('messages.details.gallery') }}
                                         </a>
-                                    </div>
+                                    </div> --}}
                                     <div class="set">
                                         <a href="{{route('contact.index')}}" class="fs-14 fw-6 {{ 'Contact' == ucfirst(last(request()->segments())) ? 'active': '' }}">
                                             {{ __('messages.details.contact_us') }}
@@ -275,7 +278,7 @@
         <a href="{{getAdImageDesktop(\App\Models\AdSpaces::HEADER)->ad_url}}"
            target="_blank">
             <img src="{{asset(getAdImageDesktop(\App\Models\AdSpaces::HEADER)->ad_banner)}}"
-                 width="1300" class="img-fluid">
+                 width="1000" class="img-fluid" style="margin-left: 125px;">
         </a>
     </div>
     @endif
@@ -376,10 +379,10 @@
                                 @endif
                             @endforeach
                         @endif
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link fs-14 fw-6 {{ ((Request::is('g')) || (Request::is('g/*'))) ? 'active' : '' }}" href="{{route('galleryPage')}}">{{ __('messages.details.gallery') }}</a>
-                        </li>
-                        @if($nav['navigationsCount'] >= 6)
+                        </li> --}}
+                        @if($nav['navigationsCount'] >= 7)
                             <li class="nav-item dropdown">
                                 <a class="nav-link" aria-current="page" href="#">
                                     <i class="fa-solid fa-ellipsis "></i>
@@ -453,9 +456,11 @@
                                             </li>
                                         @endif
                                     @endforeach
+
                                     <li class="">
                                         <a class="fs-14 fw-6 d-flex justify-content-between {{ 'Contact' == ucfirst(last(request()->segments())) ? 'active': '' }}" href="{{route('contact.index')}}">{{ __('messages.details.contact_us') }}</a>
                                     </li>
+
                                     <li class="{{ $nav['pages']->count() > 0 ? 'dropdown-sub-nav' : ''}}">
                                         @if($nav['pages']->count() > 0)
                                         <a href="#" class="fs-14 fw-6 d-flex justify-content-between {{ 'Page' == ucfirst(last(request()->segments())) ? 'active': '' }}">{{ __('messages.pages') }} <i class="fa-solid fa-angle-right fs-12 "></i>
@@ -471,8 +476,15 @@
                                     </li>
                                 </ul>
                             </li>
+
                         @endif
                         @if($nav['navigationsCount'] <= 5)
+                            <li class="nav-item">
+                                <a class="nav-link fs-14 fw-6 {{ 'Semanário' == ucfirst(last(request()->segments())) ? 'active': '' }}" href="{{route('front.semanarioPdf')}}">{{ __('Semanário') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-14 fw-6 {{ 'Diario' == ucfirst(last(request()->segments())) ? 'active': '' }}" href="{{route('front.diarioPdf')}}">{{ __('Diário') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link fs-14 fw-6 {{ 'Contact' == ucfirst(last(request()->segments())) ? 'active': '' }}" href="{{route('contact.index')}}">{{ __('messages.details.contact_us') }}</a>
                             </li>

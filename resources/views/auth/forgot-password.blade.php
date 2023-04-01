@@ -21,7 +21,7 @@
                     {{ __('auth.forgot_password.title') }}
                 </h3>
                 <div class="mb-4">
-                    {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                    {{ __('Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail e enviaremos um e-mail com um link de redefinição de senha que permitirá que você escolha um novo.') }}
                 </div>
             </div>
             <form method="POST" action="{{ route('password.email') }}">
@@ -33,7 +33,7 @@
                     <input class="form-control" id="formInputEmail" aria-describedby="emailHelp" value="{{ old('email') }}"
                            type="email" placeholder="{{ __('messages.mails.email_address') }}" name="email" required autocomplete="off" autofocus>
                 </div>
-                
+
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary mx-3">{{ __('Email Password Reset Link') }}</button>
                     <a href="{{ route('login') }}" class="btn btn-secondary">{{ __('crud.cancel') }}</a>

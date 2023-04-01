@@ -11,6 +11,7 @@ use App\Models\Emoji;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\PostReactionEmoji;
+use App\Models\PremiumDocuments;
 use App\Models\Setting;
 use App\Models\SubCategory;
 use App\Models\Subscriber;
@@ -69,6 +70,31 @@ class LandingPageController extends AppBaseController
         return view('front_new.home')->with($data);
     }
 
+    public function semanario(){
+
+        $pdfDoc = PremiumDocuments::where('Type', 'SEMANARIO')->orderBy('created_at', 'desc')->first();
+        if (Auth::check()) {
+            $user = Auth::user()->subscription;
+            if($user==null){
+             return redirect()->route('login');
+            }
+            return view('front_new.semanario', compact('pdfDoc'));
+        }
+        return redirect()->route('login');
+    }
+
+    public function diario(){
+
+        $pdfDoc = PremiumDocuments::where('Type', 'DIARIO')->orderBy('created_at', 'desc')->first();
+        if (Auth::check()) {
+            $user = Auth::user()->subscription;
+            if($user==null){
+             return redirect()->route('login');
+            }
+            return view('front_new.semanario', compact('pdfDoc'));
+        }
+        return redirect()->route('login');
+    }
     /**
      * @param  Request  $request
      * @param $slug

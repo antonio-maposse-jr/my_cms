@@ -21,6 +21,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PollController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PremiumDocumentsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RssFeedController;
 use App\Http\Controllers\seoToolsController;
@@ -30,6 +31,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\UserController;
+use App\Models\PremiumDocuments;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,7 +67,7 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
 
     Route::get('/generate-sitemap', function () {
         \Illuminate\Support\Facades\Artisan::call('generate:sitemap');
-        
+
         dump("Sitemap generated successfully");
 
         sleep(2);
@@ -87,7 +89,7 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
             [SubscriptionController::class, 'userSubscribedPlanEdit'])->name('subscription.user.plan.edit');
         Route::get('/subscribedPlan/{id}/update',
             [SubscriptionController::class, 'userSubscribedPlanUpdate'])->name('subscription.user.plan.update');
-       
+
         //sub category
         Route::get('/download-attachment/{id}', [SubscriptionController::class, 'downloadAttachment']);
     });
@@ -172,7 +174,14 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
         Route::get('bulk-post-documentation', [PostController::class, 'Documentation'])->name('bulk-post-documentation');
         Route::get('export', [PostController::class, 'export'])->name('export-csv');
         Route::post('bulk-post-store', [PostController::class, 'bulkPostStore'])->name('bulk-post-store');
+        Route::resource('premium-documents', PremiumDocumentsController::class);
+        // Route::get('premium-documents-create', [PremiumDocumentsController::class, 'create'])->name('premiumDocuments.create');
+        // Route::post('premium-documents-store', [PremiumDocumentsController::class, 'store'])->name('premiumDocuments.store');
+        // Route::get('premium-documents-edit', [PremiumDocumentsController::class, 'create'])->name('premiumDocuments.edit');
+
     });
+
+
     Route::middleware('permission:manage_rss_feeds')->group(function () {
         Route::resource('rss-feed', RssFeedController::class);
         Route::post('rss-feed/manuallyUpdate/{rssFeed}', [RssFeedController::class, 'manuallyUpdate'])->name('rss-feed.manuallyUpdate');
@@ -197,6 +206,7 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
         })->name('get-menus');
     });
 
+
     Route::middleware('permission:manage_navigation')->group(function () {
         Route::get('navigation', [NavigationController::class, 'index'])->name('navigation.index');
         Route::post('navigation/update', [NavigationController::class, 'update'])->name('navigation.update');
@@ -220,7 +230,7 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
     Route::middleware('permission:manage_news_letter')->group(function () {
         Route::resource('news-letter', NewsLetterController::class);
     });
-    
+
     // Emojis
     Route::middleware('permission:manage_emoji')->group(function () {
         Route::resource('emoji', EmojiController::class);
@@ -233,7 +243,7 @@ Route::prefix('admin')->middleware('auth', 'role:admin', 'verified.user')->group
         // SEO tools
         Route::get('seo-tools', [seoToolsController::class, 'index'])->name('seo-tools.index');
         Route::Post('seo-tools', [seoToolsController::class, 'update'])->name('seo-tools.update');
-    }); 
+    });
 
     // logs view route
 //    Route::get('logs', [LogViewerController::class, 'index']);
@@ -242,6 +252,10 @@ Route::resource('admin/ad-spaces', AdSpacesController::class);
 
 Route::middleware('xss','setLanguage')->group(function () {
     Route::get('/', [LandingPageController::class, 'index'])->name('front.home');
+
+    Route::get('/semario-pdf', [LandingPageController::class, 'semanario'])->name('front.semanarioPdf');
+    Route::get('/diario-pdf', [LandingPageController::class, 'diario'])->name('front.diarioPdf');
+
     Route::post('/comments', [LandingPageController::class, 'saveCommentsUser'])->name('comment.store');
     Route::delete('/comments/{comment}', [LandingPageController::class, 'destroyComment'])->name('comment.destroy');
     Route::post('subscribe', [LandingPageController::class, 'saveSubscribeUser'])->name('subscribe.store');
@@ -270,7 +284,7 @@ Route::middleware('xss','setLanguage')->group(function () {
 
     //reaction
     Route::post('post-reaction', [LandingPageController::class, 'postReaction'])->name('post-reaction');
-    
+
     //cookie
     Route::get('cookie', [LandingPageController::class, 'declineCookie'])->name('declineCookie');
 

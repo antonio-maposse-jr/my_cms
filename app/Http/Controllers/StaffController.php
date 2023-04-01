@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateStaffRequest;
 use App\Models\MailSetting;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Plan;
 use App\Repositories\StaffRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -72,9 +73,10 @@ class StaffController extends AppBaseController
     public function create()
     {
         $roles = Role::pluck('display_name', 'id');
+        $plans =  Plan::pluck('name', 'id');
 //        $roles = $this->staffRepository->getRole()->except([User::ADMIN]);
 //dd($roles);
-        return view('staffs.create', compact('roles'));
+        return view('staffs.create', compact('roles', 'plans'));
     }
     /**
      * Store a newly created Staff in storage.

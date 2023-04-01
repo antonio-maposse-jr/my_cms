@@ -64,6 +64,12 @@
         </div>
     </div>
     <div class="col-lg-6">
+        <div class="mb-5">
+            {{ Form::label('Plan', __('Subscription Plan').':', ['class' => 'form-label required']) }}
+            {{ Form::select('plan', $plans, !empty($staff->plans[0]) ? $staff->plans->first()->id : null, ['class' => 'form-select io-select2','required','data-control'=>'select2','placeholder' => __('Select Plan')]) }}
+        </div>
+    </div>
+    <div class="col-lg-6">
         {{ Form::label('gender', __('messages.staff.gender').':', ['class' => 'form-label required']) }}
         <div class="mb-5">
             <span class="is-valid">
@@ -104,11 +110,11 @@
                     </div>
                     <span class="picker-edit rounded-circle text-gray-500 fs-small" data-bs-toggle="tooltip"
                           data-placement="top" data-bs-original-title="Change Profile">
-                        <label> 
-                            <i class="fa-solid fa-pen" id="profileImageIcon"></i> 
-                            <input type="file" name="profile" class="image-upload d-none" accept="image/*"/> 
+                        <label>
+                            <i class="fa-solid fa-pen" id="profileImageIcon"></i>
+                            <input type="file" name="profile" class="image-upload d-none" accept="image/*"/>
                             <input type="hidden" name="avatar_remove">
-                        </label> 
+                        </label>
                     </span>
                 </div>
             </div>

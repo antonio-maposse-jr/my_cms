@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\PremiumDocument;
 use App\Models\PremiumDocuments;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Laracasts\Flash\Flash;
 
-class PremiumDocumentsController extends Controller
+class PremiumDocumentsController extends AppBaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return view('premium_document.index');
     }
 
     /**
@@ -24,7 +23,7 @@ class PremiumDocumentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('premium_document.create');
     }
 
     /**
@@ -35,7 +34,18 @@ class PremiumDocumentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $premiumDocument = new PremiumDocuments();
+        $premiumDocument->name = $request->name;
+        $premiumDocument->type = $request->type;
+        $premiumDocument->url = $request->url;
+        $premiumDocument->iframe = $request->iframe;
+        $premiumDocument->created_by = Auth::user()->id;
+        $premiumDocument->lang_id = $request->lang_id;
+
+        $premiumDocument->save();
+        Flash::success(__('Document created successfully'));
+
+        return redirect(route('premium-documents.index'));
     }
 
     /**
@@ -55,9 +65,10 @@ class PremiumDocumentsController extends Controller
      * @param  \App\Models\PremiumDocuments  $premiumDocuments
      * @return \Illuminate\Http\Response
      */
-    public function edit(PremiumDocuments $premiumDocuments)
+    public function edit(PremiumDocuments $premiumDocument)
     {
-        //
+
+        return view('premium_document.edit', compact('premiumDocument'));
     }
 
     /**
@@ -67,9 +78,20 @@ class PremiumDocumentsController extends Controller
      * @param  \App\Models\PremiumDocuments  $premiumDocuments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PremiumDocuments $premiumDocuments)
+    public function update(Request $request, PremiumDocuments $premiumDocument)
     {
-        //
+
+        $premiumDocument->name = $request->name;
+        $premiumDocument->type = $request->type;
+        $premiumDocument->url = $request->url;
+        $premiumDocument->iframe = $request->iframe;
+        $premiumDocument->created_by = Auth::user()->id;
+        $premiumDocument->lang_id = $request->lang_id;
+
+        $premiumDocument->save();
+        Flash::success(__('Document updated successfully'));
+
+        return redirect(route('premium-documents.index'));
     }
 
     /**
@@ -78,8 +100,9 @@ class PremiumDocumentsController extends Controller
      * @param  \App\Models\PremiumDocuments  $premiumDocuments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PremiumDocuments $premiumDocuments)
+    public function destroy(PremiumDocuments $premiumDocument)
     {
-        //
+        $premiumDocument->delete();
+        return $this->sendSuccess('Document deleted successfully.');
     }
 }
