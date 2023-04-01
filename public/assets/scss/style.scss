@@ -1,0 +1,59 @@
+/****************************
+==============================
+   Index
+==============================
+
+1.       Variable
+2.       Mixins
+3.       Animation
+4.       Base
+5.       Utility
+
+6.       Header
+7.       Banner
+8.       About
+9.       Team
+10.      Post
+11.      Single-post
+10.      Category
+10.      Top-games
+10.      Slidebar
+10.      Ad-banner
+10.      Video-gallery
+10.      Subscribe
+10.      Contact
+10.      Map
+10.      404
+10.      Shop
+10.      Footer
+
+
+******************************/
+
+// partials
+
+@import "./partials/Variable";
+@import "./partials/Mixins";
+@import "./partials/Animation";
+@import "./partials/Base";
+@import "./partials/Utility";
+
+// layouts
+
+@import "./layouts/Header";
+@import "./layouts/Banner";
+@import "./layouts/About";
+@import "./layouts/Team";
+@import "./layouts/Post";
+@import "./layouts/Single-post";
+@import "./layouts/Category";
+@import "./layouts/Top-games";
+@import "./layouts/Slidebar";
+@import "./layouts/Ad-banner";
+@import "./layouts/Video-gallery";
+@import "./layouts/Subscribe";
+@import "./layouts/Contact";
+@import "./layouts/Map";
+@import "./layouts/404";
+@import "./layouts/Shop";
+@import "./layouts/Footer";

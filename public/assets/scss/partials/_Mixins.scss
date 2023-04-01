@@ -1,0 +1,132 @@
+// transfrom
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+// border-radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+//usage: @include shift([property],[duration],[easing]);
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+  transition: $property $duration $ease;
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -ms-transition: $property $duration $ease;
+}
+
+// background-content
+@mixin background-content(
+  $repeat: no-repeat,
+  $size: cover,
+  $position: center center
+) {
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin background-color($color) {
+  background-color: $color;
+}
+
+// flex position
+@mixin flex-position($display, $contet, $items) {
+  display: $display;
+  justify-content: $contet;
+  align-items: $items;
+}
+
+// absolute-left-top
+@mixin absolute-left-top($position: absolute, $left: 0, $top: 0) {
+  position: $position;
+  left: $left;
+  top: $top;
+}
+
+// absolute-left-bottom
+@mixin absolute-left-bottom($position: absolute, $left: 0, $bottom: 0) {
+  position: $position;
+  left: $left;
+  bottom: $bottom;
+}
+
+// absolute-right-top
+@mixin absolute-right-top($position: absolute, $right: 0, $top: 0) {
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+// absolute-right-bottom
+@mixin absolute-right-bottom($position: absolute, $right: 0, $bottom: 0) {
+  position: $position;
+  right: $right;
+  bottom: $bottom;
+}
+
+// center position
+@mixin center-position($top: 50%, $left: 50%) {
+  top: $top;
+  left: $left;
+  transform: translate(-#{$top}, -#{$left});
+}
+
+// Square
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+// Functions
+@mixin toRem($property, $value) {
+  #{$property}: ($value / 16) + rem;
+}
+
+// Functions
+@function calculateRem($size) {
+  $vwSize: $size / 4px;
+  @return $vwSize * 1vw;
+}
+
+//   Font Size Convert To Rem
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+//   @include font-size(50px)
+
+// media quaries
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		  + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// @mixin underLineHeight($fontSize) {
+//   @if ($fontSize <= 24px) {
+//     background-size: 0 1px;
+//     background-color: red;
+//   } @else {
+//     background-size: 0 2px;
+//     background-color: blue;
+//   }
+// }

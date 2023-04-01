@@ -1,0 +1,314 @@
+/*================================
+//  subscribe-section-style-1
+=================================*/
+.subscribe-section-style-1 {
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  overflow: hidden;
+  @include breakpoint("md") {
+    padding: 60px 0;
+  }
+
+  [data-theme="dark"] & {
+    background-color: #212121;
+  }
+}
+.rt-subscribe-box {
+  margin-top: -45px;
+  .title {
+    @include toRem(font-size, 26);
+    max-width: 60%;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .layout-2 & {
+      max-width: 82%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      @include breakpoint("xs") {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    margin-top: 0;
+    .title {
+      max-width: 80%;
+    }
+  }
+  @include breakpoint("sm") {
+    .title {
+      max-width: 100%;
+    }
+  }
+}
+
+.subscribe-form-style-2 {
+  .rt-subs-group {
+    position: relative;
+  }
+  .subscribe-form {
+    @include toRem(font-size, 15);
+    color: #919191;
+    padding: 5px 20px;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0px 14px 16px 0px rgba(0, 0, 0, 0.03);
+    border: none;
+    border-radius: 5px;
+  }
+  .subscribe-btn {
+    @include toRem(font-size, 14);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    padding: 5px 20px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    @include transition();
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: darken($color-primary, 20%);
+    }
+    [data-theme="dark"] & {
+      --color-white: #fff;
+    }
+  }
+}
+
+.bouncing-bubble-animation {
+  animation: bouncebubble infinite 5s;
+}
+
+@keyframes bouncebubble {
+  1% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+/*===============================
+// subscribe-form-style-6
+===============================*/
+
+.subscribe-wrap-style-6 {
+  @include background-content();
+  padding: 35px;
+  @include breakpoint("md") {
+    background-color: unset !important;
+    padding: 0;
+  }
+}
+.subscribe-box-style-6 {
+  box-shadow: 6.889px 11.025px 56.05px 2.95px rgba(0, 0, 0, 0.14);
+  border-radius: var(--border-radius-xs);
+  background-color: var(--color-white);
+  padding: 60px 40px;
+  @include background-content();
+
+  @include breakpoint("md") {
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.14);
+    background-color: #f7f7f7;
+  }
+}
+
+.subscribe-form-style-6 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .subscrible-heading {
+    flex-shrink: 1;
+    .title {
+      @include toRem(font-size,20);
+      margin-bottom: 3px;
+    }
+    p {
+      @include toRem(font-size, 14);
+      color: #868686;
+    }
+  }
+  .rt-subs-form {
+    flex-grow: 1;
+
+    .subscribe-form {
+      @include toRem(font-size, 15);
+      color: #929292;
+      padding: 5px 20px;
+      height: 50px;
+      width: 100%;
+      border: none;
+      border-radius: 3px;
+      border: 1px solid var(--color-border);
+    }
+  }
+  .subscribe-btn {
+    @include toRem(font-size, 14);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    height: 50px;
+    padding: 5px 30px;
+    border: none;
+    border-radius: var(--border-radius-xs);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    @include transition();
+    box-shadow: 0px 7px 17.1px 0.9px rgba(0, 115, 255, 0.47);
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: darken($color-primary, 20%);
+    }
+    [data-theme="dark"] & {
+      --color-white: #fff;
+    }
+  }
+  @include breakpoint("md") {
+    display: block;
+    .subscribe-btn {
+      width: 100%;
+    }
+  }
+}
+
+/*subscribe-section-area-style-2*/
+.subscribe-section-area-style-2 {
+  padding-top: 0;
+  padding-bottom: 95px;
+}
+
+.subscribe-section-style-8 {
+  position: relative;
+  z-index: 1;
+  .element_21 {
+    left: 8%;
+    bottom: -6px;
+  }
+  .element_22 {
+    left: 45%;
+    top: -5px;
+  }
+  .element_23 {
+    right: 10%;
+    bottom: -5px;
+  }
+  [data-theme="dark"] & {
+    background: #212121 !important;
+  }
+}
+
+.rt-subscribe-title-box-style-8 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  .title {
+    @include toRem(font-size, 24);
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+  .icon {
+    @include toRem(font-size, 64);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+  p {
+    @include toRem(font-size, 17);
+    font-weight: 500;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .footer-subscribe-wrapper & {
+    .title {
+      color: var(--color-white);
+    }
+    .icon {
+      color: #606060;
+    }
+    p {
+      color: #747474;
+    }
+  }
+}
+.subscribe-form-style-8 {
+  .rt-subs-group {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .subscribe-form {
+    @include toRem(font-size, 15);
+    color: #919191;
+    padding: 5px 20px;
+    height: 50px;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    flex: 1;
+    &::placeholder {
+      color: #919191;
+    }
+  }
+  .subscribe-btn {
+    @include toRem(font-size, 14);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    @include transition();
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: darken($color-primary, 20%);
+    }
+    [data-theme="dark"] & {
+      --color-white: #fff;
+    }
+  }
+  .footer-subscribe-wrapper & {
+    .subscribe-form {
+      background: #262626;
+      color: #8b8b8b;
+      letter-spacing: 0.05rem;
+      border: none;
+      &::placeholder {
+        color: #8b8b8b;
+      }
+    }
+  }
+}

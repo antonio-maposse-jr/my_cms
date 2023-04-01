@@ -1,0 +1,114 @@
+// font family
+$font-body: "Roboto", sans-serif;
+$font-title: "Spartan", sans-serif;
+$font-awesome: "Font Awesome 5 Free";
+
+//Colors
+$color-primary: #2962ff;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-border: #e5e5e5;
+$color-cat-normal: #7a7e83;
+$color-meta-normal: #a5a6aa;
+$color-gray: #f7f7f7;
+
+$color-body: #6c6f72;
+$color-body-bg: #fff;
+
+// brakpoints
+$breakpoints: (
+  "xs": (
+    max-width: 575px,
+  ),
+  "sm": (
+    max-width: 767px,
+  ),
+  "md": (
+    max-width: 991px,
+  ),
+  "lg": (
+    max-width: 1199px,
+  ),
+) !default;
+
+$border-radius-xs: 4px;
+$border-radius-sm: 6px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-xl: 20px;
+
+$color-fb: #1559c2;
+$color-tw: #1ea9e9;
+$color-in: #3f729b;
+$color-vm: #2cc0eb;
+$color-pn: #3b5998;
+$color-wh: #43ce13;
+$color-dr: #f65e97;
+$color-dw: #ff6b10;
+$color-yu: #ed1d25;
+
+:root {
+  --font-body: "Roboto", sans-serif;
+  --font-title: "Spartan", sans-serif;
+  --font-awesome: "Font Awesome 5 Free";
+
+  //Colors
+  --color-primary: #2962ff;
+  --color-primary-rgb: 41, 98, 255;
+
+  --color-white: #fff;
+  --color-white-rgb: 255, 255, 255;
+
+  --color-black: #000;
+  --color-black-rgb: 0, 0, 0;
+
+  --color-border: #e5e5e5;
+  --color-border-rgb: 229, 229, 229;
+
+  --color-cat-normal: #7a7e83;
+  --color-cat-normal-rgb: 122, 126, 131;
+
+  --color-meta-normal: #a5a6aa;
+  --color-meta-normal-rgb: 165, 166, 170;
+
+  --color-gray: #f7f7f7;
+  --color-gray-rgb: 247, 247, 247;
+
+  --color-body: #6c6f72;
+  --color-body-rgb: 108, 111, 114;
+
+  --color-body-bg: #fff;
+
+  --border-radius-xs: 4px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 15px;
+  --border-radius-xl: 20px;
+
+  --color-fb: #1559c2;
+  --color-tw: #1ea9e9;
+  --color-in: #3f729b;
+  --color-vm: #2cc0eb;
+  --color-pn: #3b5998;
+  --color-wh: #43ce13;
+  --color-dr: #f65e97;
+  --color-dw: #ff6b10;
+  --color-yu: #ed1d25;
+}
+:root[data-theme="dark"] {
+  --color-white: #000;
+  --color-white-rgb: 0, 0, 0;
+
+  --color-black: #fff;
+  --color-black-rgb: 255, 255, 255;
+
+  --color-body: #d7d7d7;
+  --color-body-rgb: 215, 215, 215;
+  --color-body-bg: #101213;
+
+  --color-border: #222121;
+
+  --color-dark-bg_2: #171818;
+}

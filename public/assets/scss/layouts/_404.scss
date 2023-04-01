@@ -1,0 +1,23 @@
+/*================================
+//  404
+================================*/
+
+.error-area-style-1 {
+  .item-img {
+    margin-bottom: 50px;
+  }
+  .item-content {
+    max-width: 70%;
+    margin: 0 auto;
+    @include breakpoint("lg") {
+      max-width: 100%;
+    }
+    .title {
+      margin-bottom: 12px;
+      @include toRem(font-size, 28.832);
+    }
+  }
+  > .btn-wrap {
+    margin-top: 32px;
+  }
+}

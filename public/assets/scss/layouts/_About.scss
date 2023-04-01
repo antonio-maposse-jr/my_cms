@@ -1,0 +1,207 @@
+/*===============================
+//  who we are
+===============================*/
+
+.who-we-are-style-1 {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 105px;
+  @include breakpoint("md") {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.about-img-gallery-style-1 {
+  position: relative;
+  min-height: 690px;
+  margin-right: 20px;
+  @include breakpoint("md") {
+    margin-right: 0;
+  }
+
+  .about-img-gallery-list {
+    li {
+      position: absolute;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        left: 0;
+        top: 0;
+        max-width: 400px;
+        width: 100%;
+        @include breakpoint("md") {
+          max-width: 370px;
+        }
+      }
+      &:nth-child(2) {
+        right: 0;
+        top: 75px;
+        max-width: 300px;
+        width: 100%;
+        @include breakpoint("lg") {
+          max-width: 330px;
+        }
+        @include breakpoint("md") {
+          max-width: 300px;
+        }
+      }
+      &:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        max-width: 520px;
+        width: 100%;
+        border: 25px solid var(--color-white);
+      }
+      @include breakpoint("sm") {
+        position: static;
+        margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        &:nth-child(1) {
+          max-width: 100%;
+        }
+        &:nth-child(2) {
+          max-width: 100%;
+        }
+        &:nth-child(3) {
+          max-width: 100%;
+          border: none;
+        }
+      }
+    }
+  }
+  .shape-list {
+    @include breakpoint("sm") {
+      display: none;
+    }
+    li {
+      position: absolute;
+      z-index: -1;
+      &:nth-child(1) {
+        right: 60px;
+        top: 28px;
+      }
+      &:nth-child(2) {
+        left: 83px;
+        bottom: 115px;
+        @include breakpoint("md") {
+          left: 54px;
+          bottom: 140px;
+        }
+      }
+    }
+  }
+}
+
+/*skill wrap layou t2*/
+.skills-wrap-layout-1 {
+  .single-skill {
+    margin-bottom: 16px;
+  }
+
+  .title-bar {
+    .title {
+      @include toRem(font-size, 14);
+      text-transform: capitalize;
+      color: var(--color-black);
+      font-family: var(--font-body);
+      font-weight: 400;
+    }
+  }
+
+  .skill-bar {
+    height: 6px;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+
+    .skill-per {
+      position: relative;
+      height: 6px;
+      width: 0;
+      border-radius: 4px;
+      background-color: var(--color-primary);
+      transition: 2s linear;
+
+      &::before {
+        content: attr(data-per);
+        position: absolute;
+        @include toRem(font-size, 18);
+        font-weight: 500;
+        color: var(--color-black);
+        bottom: 12px;
+        right: 0;
+        font-family: var(--font-body);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: -1px;
+        bottom: -5px;
+        @include square(18px, 50%);
+        background-color: #6b92ff;
+        box-shadow: 0 9px 10px 0 rgba(#2962ff, 0.42);
+      }
+    }
+  }
+}
+
+/*about-content-area-2*/
+
+.about-content-area-2 {
+  max-width: 88%;
+  width: 100%;
+
+  // > .skills-wrap-layout-1 {
+  //   margin: 30px 0;
+  // }
+  @include breakpoint("lg") {
+    max-width: 100%;
+  }
+}
+
+/*about-video-wrap-style-1*/
+
+.about-video-wrap-style-1 {
+  margin: 0 45px;
+  position: relative;
+  .shape {
+    position: absolute;
+    right: -35px;
+    bottom: -32px;
+    z-index: 1;
+  }
+  @include breakpoint("lg") {
+    margin: 0;
+  }
+  .item-img {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    &::after {
+      @extend .after-before;
+      background-color: rgba(var(--color-black), 0.2);
+    }
+    img {
+      transform: scale(1);
+      transition: all 1.5s ease-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .rt-play-over {
+      position: absolute;
+      @include center-position();
+      z-index: 2;
+    }
+  }
+}
+
+
+.about-section-style-2 {
+
+  [data-theme="dark"] & {
+    background: var(--color-dark-bg_2) !important;
+  }
+}

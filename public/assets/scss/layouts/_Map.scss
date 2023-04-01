@@ -1,0 +1,23 @@
+/*================================
+ // Google maps
+ =================================*/
+.map-section-style-1 {
+  padding-bottom: 130px;
+  @include breakpoint("md") {
+    padding-bottom: 80px;
+  }
+}
+
+.map-wrapper {
+  overflow: hidden;
+}
+.map-style-1 {
+  .map {
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: -8px;
+    @include breakpoint("md") {
+      min-height: 350px;
+    }
+  }
+}

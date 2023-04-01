@@ -1,0 +1,26 @@
+/*=================================
+// top-games-section-style-1
+===============================*/
+
+.top-games-section-style-1 {
+  padding-bottom: 95px;
+  position: relative;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  z-index: 2;
+  .game-text {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: -1;
+  }
+  @include breakpoint("md") {
+    padding-bottom: 60px;
+  }
+  [data-theme="dark"] & {
+    background: var(--color-dark-bg_2) !important;
+  }
+}

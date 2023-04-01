@@ -1,0 +1,88 @@
+/*================================
+// rt-ad-banner-style-1
+=================================*/
+
+.ad-banner-img {
+  border-radius: $border-radius-xs;
+  text-align: center;
+  img {
+    border-radius: $border-radius-xs;
+  }
+}
+
+.post-banner-style-1 {
+  min-height: 332px;
+  position: relative;
+  border-radius: $border-radius-xs;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+  &::before {
+    background-image: url("../../media/gallery/post-banner_1.jpg");
+    @include background-content();
+    border-radius: 4px;
+  }
+  &::after {
+    border-radius: 4px;
+    opacity: 0.9;
+    background-image: linear-gradient(
+      38deg,
+      rgb(81, 45, 168) 0%,
+      rgb(41, 98, 255) 100%
+    );
+    background-image: -moz-linear-gradient(
+      38deg,
+      rgb(81, 45, 168) 0%,
+      rgb(41, 98, 255) 100%
+    );
+    background-image: -webkit-linear-gradient(
+      38deg,
+      rgb(81, 45, 168) 0%,
+      rgb(41, 98, 255) 100%
+    );
+    background-image: -ms-linear-gradient(
+      38deg,
+      rgb(81, 45, 168) 0%,
+      rgb(41, 98, 255) 100%
+    );
+  }
+  .post-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 50px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    .title {
+      @include toRem(font-size, 20);
+      a {
+        color: var(--color-white);
+      }
+      span {
+        @include toRem(font-size, 14);
+        font-weight: 500;
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  [data-theme="dark"] & {
+    --color-white: #fff;
+    --color-black: #000;
+  }
+}
